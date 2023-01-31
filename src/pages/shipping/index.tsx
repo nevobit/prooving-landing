@@ -40,11 +40,11 @@ const Shipping = () => {
                 <h2>{cartItems[0]?.name}</h2>
 
                 <label htmlFor="">Selecciona un metodo de pago</label>
-                <label htmlFor="bancolombia" className='bank-input'>
-                <input type="radio" name='paymentMethod' id='bancolombia' value="Bancolombia"  onChange={(e) => setPaymentMethodHandler(e.target.value) } />
+                {/* <label htmlFor="bancolombia" className='bank-input'> */}
+                {/* <input type="radio" name='paymentMethod' id='bancolombia' value="Bancolombia"  onChange={(e) => setPaymentMethodHandler(e.target.value) } />
                     <img src="/bancolombia.png" alt="" />
                     Bancolombia
-                </label>
+                </label> */}
                 <label htmlFor="mercadopago" className='bank-input'>
                 <input type="radio" name='paymentMethod' id='mercadopago' value="MercadoPago"   onChange={(e) => setPaymentMethodHandler(e.target.value) }/>
                     <img src="/mercadopago.png" alt="" />

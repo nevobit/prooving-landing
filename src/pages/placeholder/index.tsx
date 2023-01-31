@@ -56,7 +56,7 @@ const Placeholder = () => {
 
     }, [cartItems, router])
 
-    console.log(shippingAddress.paymentMethodHandler)
+    console.log(cartItems[0]?.name)
   return (
     <Layout title='Placeholder'>
          <div className="placeholder-content">
@@ -85,8 +85,8 @@ const Placeholder = () => {
 
                 </div>
                 {shippingAddress.paymentMethodHandler == "MercadoPago" ? (
-                    <form action="https://real-vision-api.herokuapp.com/mercadopago"
-                        method="POST" encType='multipart/form-data'>
+                    <form action="http://localhost:5000/api/v1/mercadopago"
+                        method="GET" encType='multipart/form-data' >
                         <input
                             type="hidden"
                             name="title"
