@@ -85,7 +85,7 @@ const Placeholder = () => {
 
                 </div>
                 {shippingAddress.paymentMethodHandler == "MercadoPago" ? (
-                    <form action="http://localhost:5000/api/v1/mercadopago"
+                    <form action="https://prooving-api-production.up.railway.app/api/v1/mercadopago"
                         method="GET" encType='multipart/form-data' >
                         <input
                             type="hidden"
