@@ -82,7 +82,6 @@ const Placeholder = () => {
                     <p><span>Tax:</span>{DivisaFormater(tax)}</p>
                     <p><span>Envio:</span>{DivisaFormater(shipping)}</p>
                     <p><span>Total:</span>{DivisaFormater(totalPrice)}</p>
-
                 </div>
                 {shippingAddress.paymentMethodHandler == "MercadoPago" ? (
                     <form action="https://prooving-api-production.up.railway.app/api/v1/mercadopago"
@@ -96,7 +95,6 @@ const Placeholder = () => {
                         <input type='submit' className='placeholder-btn' value="CONTINUAR" />
 
                     </form>
-
                 ) : (
                     <form action="https://checkout.wompi.co/p/"
                         method="GET" encType='multipart/form-data'>
