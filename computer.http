@@ -1,0 +1,68 @@
+POST https://prooving-api-production.up.railway.app/api/v1/computers
+Content-Type: application/json
+
+{
+    "name": "GAMER NIWARO",
+    "price": 3301000,
+    "images": ["https://res.cloudinary.com/real-vision-enterprise/image/upload/v1653430352/zoly7amoszmcvbchzt88.png"],
+    "color": "black",
+    "brand": "AMD",
+    "category": "PC GAMER",
+    "games": [
+      {
+        "name": "GTA V",
+        "image": "https://res.cloudinary.com/real-vision-enterprise/image/upload/v1651516307/htopqxqtat7fglwqgs4k.webp",
+        "uuid": "628d588e6db46c1a67b090c2"
+      },
+      {
+        "name": "Resident Evil 2",
+        "image": "https://res.cloudinary.com/real-vision-enterprise/image/upload/v1651614707/sylkaf99pj2nf1le081n.webp",
+        "uuid": "628d588e6db46c1a67b090c3"
+      },
+      {
+        "name": "Overwatch",
+        "image": "https://res.cloudinary.com/real-vision-enterprise/image/upload/v1651516327/qjeq7mh5dnj0kvndrkaz.webp",
+        "uuid": "628d588e6db46c1a67b090c4"
+      },
+      {
+        "name": "Cyberpunk",
+        "image": "https://res.cloudinary.com/real-vision-enterprise/image/upload/v1651614801/dav2j3r4jho6xacg6cbv.webp",
+        "uuid": "628d588e6db46c1a67b090c5"
+      },
+      {
+        "name": "PUBG",
+        "image": "https://res.cloudinary.com/real-vision-enterprise/image/upload/v1651516345/aoxmyifo3rbylfwmrdez.webp",
+        "uuid": "628d588e6db46c1a67b090c6"
+      }
+    ],
+    "programs": [
+      {
+        "name": "3DS Max",
+        "image": "https://res.cloudinary.com/real-vision-enterprise/image/upload/v1651614652/nunygueesphpa157bqgi.webp",
+        "uuid": "628d588e6db46c1a67b090c7"
+      },
+      {
+        "name": "Autocad",
+        "image": "https://res.cloudinary.com/real-vision-enterprise/image/upload/v1651614609/qgezzdoxp78gsqcho1sv.webp",
+        "uuid": "628d588e6db46c1a67b090c8"
+      },
+      {
+        "name": "Maya",
+        "image": "https://res.cloudinary.com/real-vision-enterprise/image/upload/v1651614592/imz3evqh00i7guozvw1d.webp",
+        "uuid": "628d588e6db46c1a67b090c9"
+      },
+      {
+        "name": "Sketchup",
+        "image": "https://res.cloudinary.com/real-vision-enterprise/image/upload/v1651614572/kdoezdofcq20hbzgjzgq.webp",
+        "uuid": "628d588e6db46c1a67b090ca"
+      },
+      {
+        "name": "Excel",
+        "image": "https://res.cloudinary.com/real-vision-enterprise/image/upload/v1651614521/ewoqhkuydpvevzeawpns.webp",
+        "uuid": "628d588e6db46c1a67b090cb"
+      }
+    ],
+    "wattage": 212,
+    "status": true,
+    "description": "La mejor pc gamer que podras comprar"
+}

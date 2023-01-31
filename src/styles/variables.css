@@ -1,0 +1,8 @@
+:root{
+    --font: 'Poppins', sans-serif;
+    --primary-color: #4169e1;
+    --bg-main: #0E0E10;
+    --bg-second: #fff;
+    --fs-xl: clamp(1.8rem, 5.5vw + 1rem, 6rem);
+    --fs-ml: clamp(1rem, .8vw + 1rem, 1.6rem);
+}
