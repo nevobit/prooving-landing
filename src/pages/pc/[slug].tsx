@@ -73,7 +73,7 @@ const Details: NextPage<{computer: Computer}> = ({computer}) => {
   const [openFooter, setOpenFooter] = useState(false);
 
   return (
-    <Layout title="">
+    <Layout title={computer.name}>
       {loading ? (
         <LoadingBox />
       ) : (

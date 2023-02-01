@@ -34,6 +34,20 @@
     border-radius: .5rem;
     font-size: 1.4rem;
 }
+
+.modal{
+    /* position: absolute; */
+    /* inset: 0; */
+    max-width: 50ch;
+    margin: 0 0 .5rem 0;   
+    /* height: 100vh; */
+}
+
+.modal::backdrop {
+    background: rgb(255, 255, 0, 1);
+  }
+
+  
 @keyframes letter-animation {
     0% {
         -webkit-filter: hue-rotate(0deg);

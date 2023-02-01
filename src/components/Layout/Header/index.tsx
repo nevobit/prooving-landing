@@ -34,30 +34,31 @@ const Header = () => {
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
-    setWidth(window.innerWidth)
-  }, [])
+    setWidth(window.innerWidth);
+  }, []);
 
   return (
     <header className={styles.header}>
       <Link href="/">
         <a>
-          <Image
-            src="/img/logos/logotipo_white.svg"
-            width={150}
-            height={50}
-            alt="Logo Prooving"
-          />
+        <Image
+          src="/img/logos/logotipo_white.svg"
+          width={150}
+          height={30}
+          alt="Logo Prooving"
+        />
         </a>
+
       </Link>
       {width > 800 ? (
         <nav className={styles.nav}>
           <ul className={styles.menu}>
             <li className={styles.menu_item}>
-              <Link href="/pcgaming">Computadoras</Link>
+              <Link href="/pc">Computadoras</Link>
             </li>
             <li className={styles.menu_item}>
               <Link href="/creadores">Creadores</Link>
-              </li>
+            </li>
             <li className={styles.menu_item}>Blog</li>
           </ul>
         </nav>
@@ -69,12 +70,11 @@ const Header = () => {
             <i className="bx bx-cart"></i>
           </span>
         </Link>
-        {width > 800? (
-
-        <Link href="/assistant">
-          <span className={styles.custom}>PC Personalizada</span>
-        </Link>
-        ): null}
+        {width > 800 ? (
+          <Link href="/assistant">
+            <span className={styles.custom}>PC Personalizada</span>
+          </Link>
+        ) : null}
       </div>
     </header>
   );

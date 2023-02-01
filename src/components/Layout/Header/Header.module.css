@@ -5,13 +5,20 @@
     width: 90%;
     max-width: 110rem;
     margin: 0 auto;
-    padding: .5rem 0;
+    padding-block: 1rem;
 }
 
+.header > a{
+    height: 30px;
+}
+.header img{
+    height: 4rem;
+}
 .menu{
     display: flex;
     gap: 2rem;
 }
+
 .menu_item{
     color: var(--bg-second);
 }

@@ -221,28 +221,26 @@ select{
     flex-wrap: wrap;
     width: 90%;
     max-width: 1270px;
-    margin: 0 auto;
-    height: 30px;
+    margin-inline: auto;
+    height: 50px;
   }
   
   header nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 3rem;
+    gap: 4rem;
   }
   
   header ul {
     color: var(--color-main);
     display: flex;
     align-items: center;
-  
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: 2rem;
     margin-bottom: 0rem;
   }
   
   header ul li {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   
   header ul li button {
