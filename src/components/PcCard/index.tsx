@@ -30,11 +30,11 @@ const PcCard = ({name, images, price, slug}:Props) => {
 
             <div className={styles.specs}>
                 <p>Procesador:</p>
-                <p>Ryzen 3 3100</p>
+                <p>Ryzen 5 5600</p>
             </div>
             <div className={styles.specs}>
                 <p>Tarjeta Grafica:</p>
-                <p>GTX 1080ti 8GB</p>
+                <p>RTX 3060 12GB</p>
             </div>
             <div className={styles.specs}>
                 <p>Memoria RAM:</p>
