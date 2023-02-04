@@ -7,13 +7,14 @@ import Footer from './Footer';
 interface Props {
   children: React.ReactNode,
   title: string
+  description?: string
 }
 
-const Layout: NextPage<Props> = ({ children, title }: Props) => {
+const Layout: NextPage<Props> = ({ children, title, description }: Props) => {
   return (
     <>
       <Header />
-      <SEO title={title} />
+      <SEO title={title} description={description} />
       <main>{children}</main>
       <Footer />
     </>

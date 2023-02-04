@@ -1,27 +1,31 @@
-import { Seo } from '@/types/Seo';
-import { NextPage } from 'next';
-import Head from 'next/head';
+import { Seo } from "@/types/Seo";
+import { NextPage } from "next";
+import Head from "next/head";
 
 const SEO: NextPage<Seo> = ({ description, author, title, meta = [] }: Seo) => {
   const metadata = [
     {
-      name: 'description',
+      name: "description",
       content: description,
     },
     {
-      name: 'og:title',
+      name: "og:title",
       content: title,
     },
     {
-      name: 'og:description',
+      name: "og:description",
       content: description,
     },
     {
-      name: 'og:type',
-      content: 'website',
+     name: "og:type",
+      content: "Prooving",
     },
     {
-      name: 'author',
+      name: "og:site_name",
+      content: "website",
+    },
+    {
+      name: "author",
       content: author,
     },
   ].concat(meta);
@@ -35,16 +39,29 @@ const SEO: NextPage<Seo> = ({ description, author, title, meta = [] }: Seo) => {
       ))}
 
       <link rel="icon" href="/favicon.ico" />
-      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+      <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet"
+      />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='true' />
-<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+      <meta name="google" content="notranslate" />
+      <meta name="robots" content="index,follow" />
+      <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossOrigin="true"
+      />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+      />
+      <link rel="canonical" href="https://prooving.com/" />
     </Head>
   );
 };
 
 SEO.defaultProps = {
-  lang: 'es-mx',
+  lang: "es-mx",
   meta: [],
 };
 

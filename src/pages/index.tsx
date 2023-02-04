@@ -12,7 +12,9 @@ const Home: NextPage<{computers: Computer[]}> = ({computers}) => {
 
   console.log({computers})
   return (
-    <Layout title='Inicio'>
+    <Layout title='PC Gamers, Componentes & Periféricos Para Gamers' 
+      description={'Construya computadoras extraordinarias con Prooving. PC para juegos premium, PC para juegos personalizados, software y otros productos relacionados con PC, todo para la comunidad gamer y de PC.'}
+    >
       <div>
         <div className={styles.banner}>
         <h2>Super. Mega. Rapido</h2>
