@@ -16,6 +16,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { computers, monitors } from "../../__mooks__/computers";
+import Image from "next/image";
 // const Details: NextPage<{computer: Computer, products: Product[]}> = ({computer, products}) => {
 const Details: NextPage<{computer: Computer}> = ({computer}) => {
   const router = useRouter();
@@ -92,7 +93,7 @@ const Details: NextPage<{computer: Computer}> = ({computer}) => {
             </button>
           </div>
           <div className={styles.container_items}>
-            <img src={computer.images[0]} alt={computer.name} />
+            <Image src={computer.images[0]} alt={computer.name} width={500} height={500} />
             <div className={styles.container_slide}>
               <h2>{computer.name}</h2>
               <Swiper
