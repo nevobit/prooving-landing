@@ -40,7 +40,7 @@ const Footer = () => {
       </div>
 
 
-      <Link title='Boton Whatsapp' href="https://api.whatsapp.com/send?phone=573207768383&text=Hola, me interesa un producto"><a><i className='bx bxl-whatsapp'></i> <p>Chat</p> </a></Link>
+      <Link  href="https://api.whatsapp.com/send?phone=573207768383&text=Hola, me interesa un producto"><a title='Boton Whatsapp'><i className='bx bxl-whatsapp'></i> <p>Chat</p> </a></Link>
     </footer>
   )
 }
