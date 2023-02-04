@@ -32,13 +32,14 @@ const SEO: NextPage<Seo> = ({ description, author, title, meta = [] }: Seo) => {
 
   return (
     <Head>
+      <html lang='es-mx' />
+
       <title>{title} - Prooving</title>
 
       {metadata.map(({ name, content }, i) => (
         <meta key={i} name={name} content={content} />
       ))}
 
-      <html lang='es-mx' />
 
       <link rel="icon" href="/favicon.ico" />
       <link
