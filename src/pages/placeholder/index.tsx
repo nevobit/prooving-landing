@@ -1,5 +1,6 @@
 import Layout from '@/components/Layout'
 import { DivisaFormater } from '@/utilities/divisaFormater';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux';
@@ -54,7 +55,7 @@ const Placeholder = () => {
             // sendMail();
         }
 
-    }, [cartItems, router])
+    }, [cartItems, router, shippingAddress])
 
     console.log(cartItems[0]?.name)
   return (
@@ -74,7 +75,7 @@ const Placeholder = () => {
                 </div>
                 <div className="placeholder-card">
                     <h2 className="title">Articulo</h2>
-                    <p className='top article'><img src={cartItems[0]?.image} alt={cartItems[0]?.name} /> {cartItems[0]?.name}</p>
+                    <p className='top article'><Image src={cartItems[0]?.image} alt={cartItems[0]?.name} width={150} height={150} /> {cartItems[0]?.name}</p>
                 </div>
                 <div className="placeholder-card">
                     <h2 className="title">Reusmen de Pago</h2>

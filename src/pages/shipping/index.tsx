@@ -1,4 +1,5 @@
 import Layout from '@/components/Layout';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
@@ -36,18 +37,18 @@ const Shipping = () => {
   return (
     <Layout title='Shipping'>
              <form className='form-shipping' onSubmit={submitHandler}>
-                <img src={cartItems[0]?.image} alt="" />
+                <Image src={cartItems[0]?.image} alt="PC Gamer" width={150} height={150} />
                 <h2>{cartItems[0]?.name}</h2>
 
                 <label htmlFor="">Selecciona un metodo de pago</label>
                  <label htmlFor="bancolombia" className='bank-input'>
                 <input type="radio" name='paymentMethod' id='bancolombia' value="Bancolombia"  onChange={(e) => setPaymentMethodHandler(e.target.value) } />
-                    <img src="/bancolombia.png" alt="" />
+                    <Image src="/bancolombia.png" alt="Bancolombia logo" width={60} height={60} />
                     Bancolombia
                 </label> 
                 <label htmlFor="mercadopago" className='bank-input'>
                 <input type="radio" name='paymentMethod' id='mercadopago' value="MercadoPago"   onChange={(e) => setPaymentMethodHandler(e.target.value) }/>
-                    <img src="/mercadopago.png" alt="" />
+                    <Image src="/mercadopago.png" alt="MercadoPago logo" width={60} height={60}  />
                     MercadoPago (T. Credito, Efecty )
                 </label>
                 <div className="info-inputs">
