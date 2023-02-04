@@ -37,7 +37,7 @@
   grid-template-rows: repeat(auto-fill, minmax(30rem, 1fr));
   gap: 1rem;
   padding: 0 2rem;
-  width: 90%;
+  width: calc(100vw- 10%);
   max-width: 110rem;
   margin: 0 auto;
   padding-bottom: 5rem;

@@ -2,10 +2,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 90%;
+    width: calc(100vw- 10%);
     max-width: 110rem;
     margin: 0 auto;
-    padding-block: 1rem;
     margin-bottom: 5rem;
     position: relative;
 
@@ -113,7 +112,7 @@
     .nav li a{
         display: block;
         font-size: 1.8rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         font-weight: 400;
     }
 
