@@ -32,8 +32,7 @@ const SEO: NextPage<Seo> = ({ description, author, title, meta = [] }: Seo) => {
 
   return (
     <Head>
-      <html lang='es-mx' />
-
+      {/* <html lang='es-mx' /> */}
       <title>{title} - Prooving</title>
 
       {metadata.map(({ name, content }, i) => (
