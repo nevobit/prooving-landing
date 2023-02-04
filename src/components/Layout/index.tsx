@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '@/components/Layout/Header';
 import SEO from '@/components/seo';
 import Footer from './Footer';
+import { Html } from 'next/document';
 
 interface Props {
   children: React.ReactNode,

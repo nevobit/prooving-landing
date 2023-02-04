@@ -25,7 +25,7 @@ const Pc: NextPage<{ computers: Computer[] }> = ({ computers }) => {
 
         <div className={styles.container}>
           <div className={` ${styles.hardwareking}`}>
-            <Image src="/img/hk.png" alt="Logo El Rey del Hardware" width={100} height={120} />
+            <Image src="/img/hk.png" alt="Logo El Rey del Hardware" width={130} height={180} />
             <h2>EL RENDIMEINTO DE GRADO CAMPEÓN ESTA AQUÍ</h2>
             <p>
               Entrando en la Arena... los Productos de edicion limitada del
