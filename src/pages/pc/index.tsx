@@ -5,6 +5,7 @@ import SEO from "@/components/seo";
 import { Computer } from "@/types";
 import { GetComputersResults } from "@/types/Computer/GetComputersResults";
 import type { GetServerSideProps, NextPage } from "next";
+import Image from "next/image";
 import styles from "./Pc.module.css";
 
 const Pc: NextPage<{ computers: Computer[] }> = ({ computers }) => {
@@ -24,7 +25,7 @@ const Pc: NextPage<{ computers: Computer[] }> = ({ computers }) => {
 
         <div className={styles.container}>
           <div className={` ${styles.hardwareking}`}>
-            <img src="/img/hk.png" alt="" />
+            <Image src="/img/hk.png" alt="Logo El Rey del Hardware" width={100} height={120} />
             <h2>EL RENDIMEINTO DE GRADO CAMPEÓN ESTA AQUÍ</h2>
             <p>
               Entrando en la Arena... los Productos de edicion limitada del

@@ -19,7 +19,7 @@ const PcCard = ({name, images, price, slug}:Props) => {
         <div>
             <h2><Image src="/img/logos/isotipo_white.svg" width={20} height={20} alt="Isotipo Prooving" /> {name} &reg;  </h2>
             <picture>
-                <img src={images[0]} alt={name} />
+                <Image src={images[0]} alt={name} width={150} height={150} />
             </picture>
             <div className={styles.price}>
                 <p>Desde: </p>

@@ -38,6 +38,8 @@ const SEO: NextPage<Seo> = ({ description, author, title, meta = [] }: Seo) => {
         <meta key={i} name={name} content={content} />
       ))}
 
+      <html lang='es-mx' />
+
       <link rel="icon" href="/favicon.ico" />
       <link
         href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"

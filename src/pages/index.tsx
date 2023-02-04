@@ -5,6 +5,7 @@ import SEO from '@/components/seo'
 import { Computer } from '@/types'
 import { GetComputersResults } from '@/types/Computer/GetComputersResults'
 import type { GetServerSideProps, NextPage } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
@@ -20,7 +21,7 @@ const Home: NextPage<{computers: Computer[]}> = ({computers}) => {
         <h2>Super. Mega. Rapido</h2>
         <p>Disfruta del siguiente nivel de juego</p>
         <Link href="/pc">Comprar ahora</Link>
-        <img className={styles.banner_img} src="/suppc2.png" alt="" />
+        <Image className={styles.banner_img} src="/suppc2.png" alt="Super PC Foto" width={500}  height={500} />
         </div>
         {/* <div className={styles.stars}></div> */}
         {/* <div className={styles.stars2}></div> */}
@@ -28,7 +29,7 @@ const Home: NextPage<{computers: Computer[]}> = ({computers}) => {
 
         <div className={styles.container}>
         <div className={` ${styles.hardwareking}`}>
-                    <img src="/img/hk.png" alt="" />
+                    <Image src="/img/hk.png" alt="Logo El Rey del Hardware" width={100} height={120} />
                     <h2>EL RENDIMEINTO DE GRADO CAMPEÓN ESTA AQUÍ</h2>
                     <p>Entrando en la Arena... los Productos de edicion limitada del Hardware King </p>
                     <button>COMPRAR AHORA</button>

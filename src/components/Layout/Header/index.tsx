@@ -75,7 +75,7 @@ const Header = () => {
           </Link>
 
       </div>
-      <button className={styles.menu_btn} onClick={() => setMenu(!menu)} ><i className='bx bx-menu'></i></button>
+      <button title="Menu" className={styles.menu_btn} onClick={() => setMenu(!menu)} ><i className='bx bx-menu'></i></button>
 
     </header>
   );
