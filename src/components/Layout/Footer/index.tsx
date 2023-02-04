@@ -17,33 +17,30 @@ const Footer = () => {
       <div>
         <div className={styles.images}>
         <Image src="/img/logos/logotipo_white.svg" width={100} height={40} alt="Logo Prooving" />
-        <Image src="/colombia.png" width={20} height={20} alt="Logo Prooving" />
+        <Image src="/colombia.png" width={20} height={20} alt="Bandera de Colombia" title='Colombia' />
 
         </div>
-        {width > 800? (
         <p className={styles.copy}>&copy; Prooving SAS. 2023  Todos los Derechos Reservados</p>
 
-        ): null}
       </div>
-      {width > 800? (
+      
 
-      <div>
+      <div className={styles.legal}>
         <Link href="/">
           Legal
         </Link>
-        <Link href="/">
+        <Link href="/legal/privacy-policy">
           Politica de Privacidad
         </Link>
         <Link href="/">
           Manejo de Cookies
         </Link>
       </div>
-      ): null}
-
+     
       </div>
 
 
-      <Link  href="https://api.whatsapp.com/send?phone=573207768383&text=Hola, me interesa un producto"><a><i className='bx bxl-whatsapp'></i> Chat </a></Link>
+      <Link  href="https://api.whatsapp.com/send?phone=573207768383&text=Hola, me interesa un producto"><a><i className='bx bxl-whatsapp'></i> <p>Chat</p> </a></Link>
     </footer>
   )
 }
