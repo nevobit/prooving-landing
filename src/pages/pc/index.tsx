@@ -38,13 +38,13 @@ export default Pc
 
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const res = await fetch('https://real-vision-api.xyz/api/v3/computers');
+  const res = await fetch('https://prooving-api-production.up.railway.app/api/v1/computers');
   
   const results: GetComputersResults = await res.json();
 
   return {
     props: {
-      computers: results
+      computers: results.items
     }
   }
 }

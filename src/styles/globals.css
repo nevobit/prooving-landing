@@ -23,6 +23,7 @@ body{
     min-height: 100vh;
     background-color: var(--bg-main);
     color: #f2f6fa;
+    padding: 0;
 }
 
 a:not([class]) {
@@ -138,7 +139,7 @@ select{
     min-height: 100vh;
   
     font-size: 1.6rem;
-    padding-bottom: 5rem;
+    /* padding-bottom: 5rem; */
   }
   
   a:not([class]) {

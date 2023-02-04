@@ -1,37 +1,64 @@
-.header{
+.footer{
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
     width: 90%;
     max-width: 110rem;
     margin: 0 auto;
     padding: 1rem 0;
+    gap: 4rem;
+    padding-bottom: 2rem;
+    margin-top: 10rem;
+    margin-bottom: 2rem;
 }
 
-.menu{
+.images{
     display: flex;
-    gap: 2rem;
-}
-.menu_item{
-    color: var(--bg-second);
+    gap: 1rem;
+    align-items: center;
 }
 
-.cart{
-    color: #f2f6fa;
+.footer > div{
     display: flex;
-    gap: .3rem;
+    align-items: flex-end;
+    gap: 4rem;
 }
 
-.buttons{
+.footer > div > div a{
+    margin-bottom: -10rem;
+}
+
+
+.footer p{
+    margin-top: -1rem;
+    font-weight: 200;
+    font-size: 1.2rem;
+    letter-spacing: .07rem;
+}
+
+.footer a{
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-left: 1rem;
+    color: rgba(255, 255, 255, .8);
+}
+
+.footer > a{
+    display: block;
+    background-color: rgba(255, 255, 255, .1);
+    padding: 1rem 3rem;
+    border-radius: 5rem;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.4rem;
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: .5rem;
+    position: fixed;
+    left: calc(90% - 12rem );
+    bottom: 4rem;
 }
 
-.custom{
-    background-color: var(--primary-color);
-    color: #f2f6fa;
-    padding: 1rem;
-    border-radius: .5rem;
-    font-size: 1.4rem;
+.footer a i{
+    font-size: 2.3rem;
 }

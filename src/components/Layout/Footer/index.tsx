@@ -1,36 +1,50 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './Footer.module.css'
 
 const Footer = () => {
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
+
   return (
-    <header className={styles.header}>
-      <Image src="/img/logos/logotipo_white.svg" width={150} height={50} alt="Logo Prooving" />
-        <nav className={styles.nav}>
-            <ul className={styles.menu}>
-                <li className={styles.menu_item}><Link href='/pcgaming'>Computadoras</Link></li>
-                <li className={styles.menu_item}>Creadores</li>
-                <li className={styles.menu_item}>Blog</li>
-            </ul>
-        </nav>
+    <footer className={styles.footer}>
+      <div>
 
-        <div className={styles.buttons}>
+      <div>
+        <div className={styles.images}>
+        <Image src="/img/logos/logotipo_white.svg" width={100} height={40} alt="Logo Prooving" />
+        <Image src="/colombia.png" width={20} height={20} alt="Logo Prooving" />
 
-        <Link href="/cart">
-          <span className={styles.cart}>
-            <sup>0</sup>
-            <i className='bx bx-cart'></i>
-          </span>
-        </Link>
-        <Link href="/cart">
-          <span className={styles.custom}>
-              PC Personalizada
-          </span>
-        </Link>
         </div>
+        {width > 800? (
+        <p className={styles.copy}>&copy; Prooving SAS. 2023  Todos los Derechos Reservados</p>
 
-    </header>
+        ): null}
+      </div>
+      {width > 800? (
+
+      <div>
+        <Link href="/">
+          Legal
+        </Link>
+        <Link href="/">
+          Politica de Privacidad
+        </Link>
+        <Link href="/">
+          Manejo de Cookies
+        </Link>
+      </div>
+      ): null}
+
+      </div>
+
+
+      <Link  href="https://api.whatsapp.com/send?phone=3207768383&text=Hola, me interesa un producto"><a><i className='bx bxl-whatsapp'></i> Chat </a></Link>
+    </footer>
   )
 }
 

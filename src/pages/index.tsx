@@ -5,6 +5,7 @@ import SEO from '@/components/seo'
 import { Computer } from '@/types'
 import { GetComputersResults } from '@/types/Computer/GetComputersResults'
 import type { GetServerSideProps, NextPage } from 'next'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage<{computers: Computer[]}> = ({computers}) => {
@@ -15,8 +16,13 @@ const Home: NextPage<{computers: Computer[]}> = ({computers}) => {
       <div>
         <div className={styles.banner}>
         <h2>Super. Mega. Rapido</h2>
-        <p>Por mucho tiempo los amantes de los videojuegos se han conformado con una PC Gamer sin personalidad, sin carácter y sin aquello que te haga vibrar. Con una PC de Real Vision Hardware, tienes el extremo opuesto: una PC Gamer con identidad única, con estética inigualable y con tanta potencia que no pasarás desapercibido en cualquier juego.</p>
+        <p>Disfruta del siguiente nivel de juego</p>
+        <Link href="/pc">Comprar ahora</Link>
+        <img className={styles.banner_img} src="/suppc2.png" alt="" />
         </div>
+        {/* <div className={styles.stars}></div> */}
+        {/* <div className={styles.stars2}></div> */}
+        {/* <div className={styles.stars3}></div> */}
 
         <div className={styles.container}>
         <div className={` ${styles.hardwareking}`}>

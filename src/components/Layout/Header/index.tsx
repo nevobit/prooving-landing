@@ -32,6 +32,7 @@ const useWindowDimensions = () => {
 
 const Header = () => {
   const [width, setWidth] = useState(0);
+  const [menu, setMenu] = useState(false);
 
   useEffect(() => {
     setWidth(window.innerWidth);
@@ -41,28 +42,27 @@ const Header = () => {
     <header className={styles.header}>
       <Link href="/">
         <a>
-        <Image
-          src="/img/logos/logotipo_white.svg"
-          width={150}
-          height={30}
-          alt="Logo Prooving"
-        />
+          <Image
+            src="/img/logos/logotipo_white.svg"
+            width={150}
+            height={30}
+            alt="Logo Prooving"
+          />
         </a>
-
       </Link>
-      {width > 800 ? (
-        <nav className={styles.nav}>
-          <ul className={styles.menu}>
-            <li className={styles.menu_item}>
-              <Link href="/pc">Computadoras</Link>
-            </li>
-            <li className={styles.menu_item}>
-              <Link href="/creadores">Creadores</Link>
-            </li>
-            <li className={styles.menu_item}>Blog</li>
-          </ul>
-        </nav>
-      ) : null}
+      <nav className={`${styles.nav} ${menu? styles.open: null}`}>
+        <ul className={styles.menu}>
+          <li className={styles.menu_item}>
+            <Link href="/pc">Computadoras</Link>
+          </li>
+          <li className={styles.menu_item}>
+            <Link href="/creadores">Creadores</Link>
+          </li>
+          <li className={styles.menu_item}><Link href="/blog">Blog</Link></li>
+          <li className={styles.menu_item_mobile_gray}><Link href="/cart">Carrito</Link></li>
+          <li className={styles.menu_item_mobile}><Link href="/asistente">PC Personalizada</Link></li>
+        </ul>
+      </nav>
 
       <div className={styles.buttons}>
         <Link href="/cart">
@@ -70,12 +70,13 @@ const Header = () => {
             <i className="bx bx-cart"></i>
           </span>
         </Link>
-        {width > 800 ? (
-          <Link href="/assistant">
+          <Link href="/asistente">
             <span className={styles.custom}>PC Personalizada</span>
           </Link>
-        ) : null}
+
       </div>
+      <button className={styles.menu_btn} onClick={() => setMenu(!menu)} ><i className='bx bx-menu'></i></button>
+
     </header>
   );
 };

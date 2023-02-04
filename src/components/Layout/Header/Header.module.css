@@ -6,13 +6,22 @@
     max-width: 110rem;
     margin: 0 auto;
     padding-block: 1rem;
+    margin-bottom: 5rem;
+    position: relative;
+
 }
 
 .header > a{
     height: 30px;
 }
+
+.nav ul li {
+    font-weight: 300 !important;
+}
+
 .header img{
     height: 4rem;
+    z-index: 9;
 }
 .menu{
     display: flex;
@@ -58,4 +67,104 @@
     padding: 1rem;
     border-radius: .5rem;
     font-size: 1.4rem;
+}
+
+.menu_btn{
+    display: none;
+}
+
+.menu_item_mobile {
+    display: none;
+}
+
+.menu_item_mobile_gray {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .menu_btn{
+        /* position: absolute; */
+        display: block;
+        font-size:2.8rem;
+        color: #fff;
+        z-index: 9;
+    }
+
+    .buttons{
+        display: none;
+    }
+    .nav{
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--bg-main);
+        height: 100vh;
+        left: 100%;
+        width: 100%;
+        z-index: 1;
+        top: 0;
+        padding: 1rem 2rem;
+        border-top: 1px solid rgba(255, 255, 255, .4);
+        transition: .5s linear;
+        padding-top: 8rem;
+
+    }
+
+    .nav li a{
+        display: block;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        font-weight: 400;
+    }
+
+    .nav ul{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .nav.open{
+        left: 0;
+        top: 0;
+        padding-top: 8rem;
+    }
+
+    .nav.open ul{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        justify-content: flex-start;
+        align-items: flex-start;
+    } 
+
+    .nav ul .menu_item_mobile{
+        display: block;
+        background-color: var(--primary-color);
+        width: 100%;
+        border-radius: .5rem;
+        text-align: center;
+        padding-top: .7rem;
+        height: 4rem;
+        font-size: 1.2rem;
+    }
+    .nav .menu_item_mobile_gray{
+        display: block;
+        background-color: rgba(255, 255, 255, .2);
+        width: 100%;
+        border-radius: .5rem;
+        text-align: center;
+        padding-top: .7rem;
+        height: 4rem;
+        font-size: 1.2rem;
+    }
+
+    .menu_item_mobile a{
+        font-size: 1.6rem !important;
+    }
+
+    .menu_item_mobile_gray a{
+        font-size: 1.6rem !important;
+    }
+
 }

@@ -2,6 +2,7 @@ import { NextPage } from 'next';
 import React from 'react';
 import Header from '@/components/Layout/Header';
 import SEO from '@/components/seo';
+import Footer from './Footer';
 
 interface Props {
   children: React.ReactNode,
@@ -14,6 +15,7 @@ const Layout: NextPage<Props> = ({ children, title }: Props) => {
       <Header />
       <SEO title={title} />
       <main>{children}</main>
+      <Footer />
     </>
   );
 };
