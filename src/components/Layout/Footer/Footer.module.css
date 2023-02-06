@@ -54,7 +54,7 @@
     align-items: center;
     gap: .5rem;
     position: fixed;
-    left: calc(90% - 12rem );
+    right: 2rem;
     bottom: 2rem;
 }
 
@@ -71,7 +71,8 @@
 @media screen and (max-width: 800px) {
     .footer > a{
         padding: 1rem 1rem;
-        left: calc(90% - 5rem );
+        bottom: 1rem;
+        z-index: 9999999;
     }
     
 .footer > a p{

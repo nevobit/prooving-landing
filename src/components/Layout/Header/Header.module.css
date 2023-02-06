@@ -5,9 +5,9 @@
     width: calc(100vw- 10%);
     max-width: 110rem;
     margin: 0 auto;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
     position: relative;
-
+    padding-top: 1rem;
 }
 
 .header > a{

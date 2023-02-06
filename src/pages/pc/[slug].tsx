@@ -18,7 +18,7 @@ import "swiper/css/scrollbar";
 import { computers, monitors } from "../../__mooks__/computers";
 import Image from "next/image";
 // const Details: NextPage<{computer: Computer, products: Product[]}> = ({computer, products}) => {
-const Details: NextPage<{computer: Computer}> = ({computer}) => {
+const Details: NextPage<{computer: Computer, products: any}> = ({computer, products}) => {
   const router = useRouter();
   const { cartItems, setCartItems } = useContext(GlobalContext);
   console.log({ computers });
@@ -60,7 +60,7 @@ const Details: NextPage<{computer: Computer}> = ({computer}) => {
   const [loading, setLoading] = useState(false);
   const [topButton, setTopButton] = useState(false);
   const [monitorClass, setMonitorClass] = useState<any>({
-    _id: "noid",
+    uuid: "noid",
     price: 0,
   });
   const addMonitorHandler = async (m: any) => {
@@ -73,6 +73,7 @@ const Details: NextPage<{computer: Computer}> = ({computer}) => {
 
   const [openFooter, setOpenFooter] = useState(false);
 
+  console.log({products})
   return (
     <Layout title={computer.name}>
       {loading ? (
@@ -93,7 +94,7 @@ const Details: NextPage<{computer: Computer}> = ({computer}) => {
             </button>
           </div>
           <div className={styles.container_items}>
-            <Image src={computer.images[0]} alt={computer.name} width={500} height={500} />
+            <Image src={computer.images[0]} alt={computer.name} width={400} height={450} />
             <div className={styles.container_slide}>
               <h2>{computer.name}</h2>
               <Swiper
@@ -111,9 +112,9 @@ const Details: NextPage<{computer: Computer}> = ({computer}) => {
                     key={spec.name}
                   >
                     <div className={styles.box}>
-                      <img src={spec.images[0]} alt="" />
-                      <h4>{DivisaFormater(spec.price)}</h4>
-                      <p>{spec.name}</p>
+                      {/* <img src={spec?.images[0]} alt="" /> */}
+                      <h4>{DivisaFormater(spec?.price)}</h4>
+                      <p>{spec?.name}</p>
                     </div>
                   </SwiperSlide>
                 ))}
@@ -134,12 +135,26 @@ const Details: NextPage<{computer: Computer}> = ({computer}) => {
                   onSelect={() => console.log("Hi")}
                   key="1232"
                 >
-                  <div className={monitorClass?._id == "noid" ? `${styles.box} ${styles.selected}` : styles.box} onClick={() => addMonitorHandler({ _id: "noid", price: 0 })}>
+                  <div className={monitorClass?.uuid == "noid" ? `${styles.box} ${styles.selected}` : styles.box} onClick={() => addMonitorHandler({ uuid: "noid", price: 0 })}>
                     <img src="/no-monitor.png" alt="" />
                     <h4>{DivisaFormater(0)}</h4>
                     <p>Sin Monitor</p>
                   </div>
+
+
                 </SwiperSlide> 
+
+                {products.items.filter((product: Product) => product.category == '14f9af3-c649-42c0-b679-521887d99462').map((product: Product) => (
+                    <SwiperSlide 
+                    key={product.name}
+                    >
+                      <div className={monitorClass?.uuid == product.uuid ? `${styles.box} ${styles.selected}` : styles.box} onClick={() => addMonitorHandler({ uuid: product.uuid, price: product.price })}>
+                    <img src={product.images[0]} alt="" />
+                    <h4>{DivisaFormater(product.price)}</h4>
+                    <p>{product.name}</p>
+                  </div>
+                    </SwiperSlide>
+                ) )}
 
                 {/* {products.filter((moni) => moni.category == "626dd952cfc8d7c93ecd9eb3")
                   .map((moni) => (
@@ -311,7 +326,7 @@ export async function getServerSideProps(context: any) {
   const { slug } = params;
 
   const res = await fetch(`https://prooving-api-production.up.railway.app/api/v1/computer/${slug}`);
-  const resProducts = await fetch(`https://real-vision-api.xyz/products`);
+  const resProducts = await fetch(`https://prooving-api-production.up.railway.app/api/v1/products?limit=100`);
 
   const results = await res.json();
   const resultsProducts = await resProducts.json();

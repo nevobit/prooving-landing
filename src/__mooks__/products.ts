@@ -3,8 +3,8 @@ import { Product } from "@/types/Product";
 export const products: Product[] = [
     {
         uuid: '1',
-        name: 'Ryzen 5 5600',
-        slug: 'ryzen-5-5600',
+        name: 'Ryzen 5 5600G',
+        slug: 'ryzen-5-5600g',
         images: [
             '/pc.png'
         ],

@@ -1,4 +1,5 @@
 import { DivisaFormater } from '@/utilities/divisaFormater';
+import { GetServerSideProps, NextPage } from 'next';
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -9,10 +10,15 @@ interface Props {
     images: string[];
     price: number;
     slug: string;
+    cpu?: string;
+    ram?: string;
+    gpu?: string;
+    specs?: string[];
 }
 
-const PcCard = ({name, images, price, slug}:Props) => {
+const PcCard = ({name, images, price, slug, specs, cpu, ram, gpu}:Props) => {
 
+    console.log({cpu})
   return (
     <Link href={`pc/${slug}`}>
         <a className={styles.card}>
@@ -30,15 +36,15 @@ const PcCard = ({name, images, price, slug}:Props) => {
 
             <div className={styles.specs}>
                 <p>Procesador:</p>
-                <p>Ryzen 5 5600</p>
+                <p>{cpu}</p>
             </div>
             <div className={styles.specs}>
                 <p>Tarjeta Grafica:</p>
-                <p>RTX 3060 12GB</p>
+                <p>{gpu}</p>
             </div>
             <div className={styles.specs}>
                 <p>Memoria RAM:</p>
-                <p>16GB RAM DDR4</p>
+                <p>{ram}</p>
             </div>
         </div>
         </a>
@@ -48,3 +54,15 @@ const PcCard = ({name, images, price, slug}:Props) => {
 }
 
 export default PcCard
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    const res = await fetch('https://prooving-api-production.up.railway.app/api/v1/products');
+    
+    const results: any = await res.json();
+  
+    return {
+      props: {
+        products: results.items
+      }
+    }
+  }
