@@ -35,7 +35,7 @@ const Blog = () => {
         <div className={styles.header}>
             <ul>
                 {categories.map((category) => (
-                <li>{category.name}</li>
+                <li key={category.name}>{category.name}</li>
                 ))}
             </ul>
             <input type="search" placeholder='Buscar en blog' />
@@ -54,7 +54,7 @@ const Blog = () => {
         </div>
         <div className={styles.post_container}>
                 {posts.map(({title, image, createdAt, description, category, views}: Blog) => (
-                    <Card title={title} image={image} category={category} time={createdAt} text={description} views={views} />
+                    <Card title={title} image={image} key={title} category={category} time={createdAt} text={description} views={views} />
                 ))}
                     <Card views="20" time="Oct 12, 2022"  category="Noticias" title="Todo lo que se sabe sobre Alder Lake, los procesadores Intel de 12* generacion" image='/windows.jpeg' text="Como instalar windows 11 en tu nuevo pc , realmente vale la pena hacerlo, en este post te contare que pasa realmente cunado apsas de windows 11 a windows 10" />
                     <Card views="20" time="Oct 12, 2022" category="Software" title="Aprende a usar Google Classrom como profesor o alumno" image='/windows.jpeg' text="Como instalar windows 11 en tu nuevo pc , realmente vale la pena hacerlo, en este post te contare que pasa realmente cunado apsas de windows 11 a windows 10" />
