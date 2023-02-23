@@ -85,7 +85,10 @@ const loadModel = () => {
   // animate()
 };
 
-const Home: NextPage<{ computers: Computer[], products: any }> = ({ computers, products }) => {
+const Home: NextPage<{ computers: Computer[]; products: any }> = ({
+  computers,
+  products,
+}) => {
   const setCpuHandler = (specs: string[]): string => {
     const pro = products.filter(
       (p: any) =>
@@ -96,7 +99,6 @@ const Home: NextPage<{ computers: Computer[], products: any }> = ({ computers, p
   };
 
   const setRamHandler = (specs: string[]): string => {
-    
     const pro = products.filter(
       (p: any) =>
         p.uuid == specs[2] &&
@@ -185,10 +187,10 @@ export default Home;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const res = await fetch(
-    "https://prooving-api-production.up.railway.app/api/v1/computers"
+    "https://prooving-api-production-ac13.up.railway.app/api/v1/computers"
   );
   const resProducts = await fetch(
-    "https://prooving-api-production.up.railway.app/api/v1/products?limit=100"
+    "https://prooving-api-production-ac13.up.railway.app/api/v1/products?limit=100"
   );
 
   const results: GetComputersResults = await res.json();

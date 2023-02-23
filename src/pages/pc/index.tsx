@@ -25,7 +25,12 @@ const Pc: NextPage<{ computers: Computer[] }> = ({ computers }) => {
 
         <div className={styles.container}>
           <div className={` ${styles.hardwareking}`}>
-            <Image src="/img/hk.png" alt="Logo El Rey del Hardware" width={130} height={180} />
+            <Image
+              src="/img/hk.png"
+              alt="Logo El Rey del Hardware"
+              width={130}
+              height={180}
+            />
             <h2>EL RENDIMEINTO DE GRADO CAMPEÓN ESTA AQUÍ</h2>
             <p>
               Entrando en la Arena... los Productos de edicion limitada del
@@ -52,7 +57,7 @@ export default Pc;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const res = await fetch(
-    "https://prooving-api-production.up.railway.app/api/v1/computers"
+    "https://prooving-api-production-ac13.up.railway.app/api/v1/computers"
   );
 
   const results: GetComputersResults = await res.json();

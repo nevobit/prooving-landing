@@ -18,7 +18,10 @@ import "swiper/css/scrollbar";
 import { computers, monitors } from "../../__mooks__/computers";
 import Image from "next/image";
 // const Details: NextPage<{computer: Computer, products: Product[]}> = ({computer, products}) => {
-const Details: NextPage<{computer: Computer, products: any}> = ({computer, products}) => {
+const Details: NextPage<{ computer: Computer; products: any }> = ({
+  computer,
+  products,
+}) => {
   const router = useRouter();
   const { cartItems, setCartItems } = useContext(GlobalContext);
   console.log({ computers });
@@ -56,7 +59,6 @@ const Details: NextPage<{computer: Computer, products: any}> = ({computer, produ
     router.push("/shipping");
   };
 
-
   const [loading, setLoading] = useState(false);
   const [topButton, setTopButton] = useState(false);
   const [monitorClass, setMonitorClass] = useState<any>({
@@ -73,7 +75,7 @@ const Details: NextPage<{computer: Computer, products: any}> = ({computer, produ
 
   const [openFooter, setOpenFooter] = useState(false);
 
-  console.log({products})
+  console.log({ products });
   return (
     <Layout title={computer.name}>
       {loading ? (
@@ -94,7 +96,12 @@ const Details: NextPage<{computer: Computer, products: any}> = ({computer, produ
             </button>
           </div>
           <div className={styles.container_items}>
-            <Image src={computer.images[0]} alt={computer.name} width={400} height={450} />
+            <Image
+              src={computer.images[0]}
+              alt={computer.name}
+              width={400}
+              height={450}
+            />
             <div className={styles.container_slide}>
               <h2>{computer.name}</h2>
               <Swiper
@@ -130,31 +137,53 @@ const Details: NextPage<{computer: Computer, products: any}> = ({computer, produ
                 pagination={{ clickable: true }}
                 onSwiper={(swiper) => console.log(swiper.controller)}
               >
-                 <SwiperSlide
+                <SwiperSlide
                   zoom={true}
                   onSelect={() => console.log("Hi")}
                   key="1232"
                 >
-                  <div className={monitorClass?.uuid == "noid" ? `${styles.box} ${styles.selected}` : styles.box} onClick={() => addMonitorHandler({ uuid: "noid", price: 0 })}>
+                  <div
+                    className={
+                      monitorClass?.uuid == "noid"
+                        ? `${styles.box} ${styles.selected}`
+                        : styles.box
+                    }
+                    onClick={() =>
+                      addMonitorHandler({ uuid: "noid", price: 0 })
+                    }
+                  >
                     <img src="/no-monitor.png" alt="" />
                     <h4>{DivisaFormater(0)}</h4>
                     <p>Sin Monitor</p>
                   </div>
+                </SwiperSlide>
 
-
-                </SwiperSlide> 
-
-                {products.items.filter((product: Product) => product.category == '14f9af3-c649-42c0-b679-521887d99462').map((product: Product) => (
-                    <SwiperSlide 
-                    key={product.name}
-                    >
-                      <div className={monitorClass?.uuid == product.uuid ? `${styles.box} ${styles.selected}` : styles.box} onClick={() => addMonitorHandler({ uuid: product.uuid, price: product.price })}>
-                    <img src={product.images[0]} alt="" />
-                    <h4>{DivisaFormater(product.price)}</h4>
-                    <p>{product.name}</p>
-                  </div>
+                {products.items
+                  .filter(
+                    (product: Product) =>
+                      product.category == "14f9af3-c649-42c0-b679-521887d99462"
+                  )
+                  .map((product: Product) => (
+                    <SwiperSlide key={product.name}>
+                      <div
+                        className={
+                          monitorClass?.uuid == product.uuid
+                            ? `${styles.box} ${styles.selected}`
+                            : styles.box
+                        }
+                        onClick={() =>
+                          addMonitorHandler({
+                            uuid: product.uuid,
+                            price: product.price,
+                          })
+                        }
+                      >
+                        <img src={product.images[0]} alt="" />
+                        <h4>{DivisaFormater(product.price)}</h4>
+                        <p>{product.name}</p>
+                      </div>
                     </SwiperSlide>
-                ) )}
+                  ))}
 
                 {/* {products.filter((moni) => moni.category == "626dd952cfc8d7c93ecd9eb3")
                   .map((moni) => (
@@ -215,9 +244,9 @@ const Details: NextPage<{computer: Computer, products: any}> = ({computer, produ
                 <i className="bx bxs-joystick"></i> Juegos Recomendados
               </div>
               <div className={styles.boxContent}>
-                 {computer.games.map(({ name, image }) => (
-                <img key={name} src={image} alt="" title={name} />
-              ))} 
+                {computer.games.map(({ name, image }) => (
+                  <img key={name} src={image} alt="" title={name} />
+                ))}
               </div>
             </div>
             <div className={styles.gamesBox}>
@@ -225,9 +254,14 @@ const Details: NextPage<{computer: Computer, products: any}> = ({computer, produ
                 <i className="bx bxs-palette"></i> Ideal Para
               </div>
               <div className={styles.boxContent}>
-                 {computer.programs.map((program) => (
-                <img key={program.name} src={program.image} alt="" title={program.name} />
-              ))}  
+                {computer.programs.map((program) => (
+                  <img
+                    key={program.name}
+                    src={program.image}
+                    alt=""
+                    title={program.name}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -325,8 +359,12 @@ export async function getServerSideProps(context: any) {
   const { params } = context;
   const { slug } = params;
 
-  const res = await fetch(`https://prooving-api-production.up.railway.app/api/v1/computer/${slug}`);
-  const resProducts = await fetch(`https://prooving-api-production.up.railway.app/api/v1/products?limit=100`);
+  const res = await fetch(
+    `https://prooving-api-production-ac13.up.railway.app/api/v1/computer/${slug}`
+  );
+  const resProducts = await fetch(
+    `https://prooving-api-production-ac13.up.railway.app/api/v1/products?limit=100`
+  );
 
   const results = await res.json();
   const resultsProducts = await resProducts.json();
