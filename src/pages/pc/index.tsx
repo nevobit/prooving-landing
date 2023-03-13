@@ -38,13 +38,14 @@ const Pc: NextPage<{ computers: Computer[] }> = ({ computers }) => {
             </p>
             <button>COMPRAR AHORA</button>
           </div>
-          {computers.map(({ name, images, price, slug }: Computer) => (
+          {computers.map(({ name, images, price, slug, specs }: Computer) => (
             <PcCard
               key={name}
               slug={slug}
               name={name}
               images={images}
               price={price}
+              specs={specs}
             />
           ))}
         </div>
@@ -57,7 +58,9 @@ export default Pc;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const res = await fetch(
-    "https://prooving-api-production-ac13.up.railway.app/api/v1/computers"
+    // "https://prooving-api-production-ac13.up.railway.app/api/v1/computers"
+    "http://localhost:5000/api/v1/computers"
+    
   );
 
   const results: GetComputersResults = await res.json();

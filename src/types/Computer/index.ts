@@ -16,7 +16,7 @@ export interface Computer {
     uuid: string;
     name: string;
     slug: string;
-    specs: Product[];
+    specs: any[];
     images: string[];
     category: string;
     brand: string;

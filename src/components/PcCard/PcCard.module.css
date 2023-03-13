@@ -73,4 +73,9 @@
 
 .specs p:last-child{
     font-weight: 600;
+    text-overflow: ellipsis;
+    width: 13rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: right;
 }

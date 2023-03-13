@@ -16,8 +16,8 @@ interface Props {
   specs?: string[];
 }
 
-const PcCard = ({ name, images, price, slug, specs, cpu, ram, gpu }: Props) => {
-  console.log({ cpu });
+const PcCard = ({ name, images, price, slug, specs }: Props) => {
+  console.log({ specs });
   return (
     <Link href={`pc/${slug}`}>
       <a className={styles.card}>
@@ -41,10 +41,27 @@ const PcCard = ({ name, images, price, slug, specs, cpu, ram, gpu }: Props) => {
             </div>
           </div>
 
-          <div className={styles.specs}>
-            <p>Procesador:</p>
-            <p>{cpu}</p>
-          </div>
+          {specs?.filter((spec:any) => spec.category.name == "CPU").map((spec: any) => (
+            <div key={spec.uuid} className={styles.specs}>
+              <p>Procesador:</p>
+              <p>{spec.name}</p>
+            </div>
+          ))}
+          
+          
+          {specs?.filter((spec:any) => spec.category.name == "GPU").map((spec: any) => (
+            <div key={spec.uuid} className={styles.specs}>
+              <p>Tarjeta Grafica:</p>
+              <p>{spec.name}</p>
+            </div>
+          ))}
+          {specs?.filter((spec:any) => spec.category.name == "RAM").map((spec: any) => (
+            <div key={spec.uuid} className={styles.specs}>
+              <p>Memoria RAM:</p>
+              <p>{spec.name}</p>
+            </div>
+          ))}
+          {/*           
           <div className={styles.specs}>
             <p>Tarjeta Grafica:</p>
             <p>{gpu}</p>
@@ -52,7 +69,7 @@ const PcCard = ({ name, images, price, slug, specs, cpu, ram, gpu }: Props) => {
           <div className={styles.specs}>
             <p>Memoria RAM:</p>
             <p>{ram}</p>
-          </div>
+          </div> */}
         </div>
       </a>
     </Link>
@@ -60,17 +77,3 @@ const PcCard = ({ name, images, price, slug, specs, cpu, ram, gpu }: Props) => {
 };
 
 export default PcCard;
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const res = await fetch(
-    "https://prooving-api-production-ac13.up.railway.app/api/v1/products"
-  );
-
-  const results: any = await res.json();
-
-  return {
-    props: {
-      products: results.items,
-    },
-  };
-};

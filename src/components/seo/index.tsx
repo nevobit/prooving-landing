@@ -45,18 +45,7 @@ const SEO: NextPage<Seo> = ({ description, author, title, meta = [] }: Seo) => {
         href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
         rel="stylesheet"
       />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <meta name="google" content="notranslate" />
-      <meta name="robots" content="index,follow" />
-      <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossOrigin="true"
-      />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet"
-      />
+ 
       <link rel="canonical" href="https://prooving.com/" />
     </Head>
   );
