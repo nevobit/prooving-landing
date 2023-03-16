@@ -17,7 +17,12 @@ interface Props {
 }
 
 const PcCard = ({ name, images, price, slug, specs }: Props) => {
-  console.log({ specs });
+  const Price = () =>{
+    const totalPrice = specs?.reduce((a, c:any) => a + c.price, 0) ?? 0;
+    return DivisaFormater(totalPrice);
+  }
+  
+  
   return (
     <Link href={`pc/${slug}`}>
       <a className={styles.card}>
@@ -37,7 +42,7 @@ const PcCard = ({ name, images, price, slug, specs }: Props) => {
           <div className={styles.price}>
             <p>Desde: </p>
             <div>
-              <p>{DivisaFormater(price)}</p>
+              <p>{Price()}</p>
             </div>
           </div>
 
