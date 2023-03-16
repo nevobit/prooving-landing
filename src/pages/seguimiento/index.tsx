@@ -8,7 +8,7 @@ const Tracking = () => {
   const [is, setIs] = useState(false);
   
   const verify = () => {
-    if(search.toLocaleLowerCase() == 'proo567847673'){
+    if(search.toLocaleLowerCase() == 'PROO567847673'){
       setIs(true);
     }else{
       alert("Numero de seguimiento no encontrado")
@@ -92,7 +92,7 @@ const Tracking = () => {
           </div>
           <div>
             <span>Numero de seguimiento</span>
-            <p>3006679301</p>
+            <p>PROO567847673</p>
           </div>
           <div>
             <span>Estado de envio</span>
@@ -104,10 +104,10 @@ const Tracking = () => {
           </div>
           <div>
             <span>Metodo de pago</span>
-            <p>Nequi</p>
+            <p>Colpartia - Nequi</p>
           </div>
           <div>
-            <span>Precio de envio</span>
+            <span>Estado del pago</span>
             <p>Pendiente</p>
           </div>
         </div>

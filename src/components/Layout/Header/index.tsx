@@ -58,6 +58,9 @@ const Header = () => {
           <li className={styles.menu_item}>
             <Link href="/creadores">Creadores</Link>
           </li>
+          <li className={styles.menu_item}>
+            <Link href="/seguimiento">Seguimiento</Link>
+          </li>
           <li className={styles.menu_item}><Link href="/blog">Blog</Link></li>
           <li className={styles.menu_item_mobile_gray}><Link href="/cart">Carrito</Link></li>
           <li className={styles.menu_item_mobile}><Link href="/asistente">PC Personalizada</Link></li>
