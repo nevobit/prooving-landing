@@ -58,8 +58,8 @@ export default Pc;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const res = await fetch(
-    // "https://prooving-api-production-ac13.up.railway.app/api/v1/computers"
-    "http://localhost:5000/api/v1/computers"
+    "https://prooving-api-production-ac13.up.railway.app/api/v1/computers"
+    // "http://localhost:5000/api/v1/computers"
     
   );
 

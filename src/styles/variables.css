@@ -5,4 +5,5 @@
     --bg-second: #fff;
     --fs-xl: clamp(1.8rem, 5.5vw + 1rem, 6rem);
     --fs-ml: clamp(1rem, .8vw + 1rem, 1.6rem);
+    --alert: #E22233;
 }

@@ -18,13 +18,12 @@ import "swiper/css/scrollbar";
 import { computers, monitors } from "../../__mooks__/computers";
 import Image from "next/image";
 // const Details: NextPage<{computer: Computer, products: Product[]}> = ({computer, products}) => {
-const Details: NextPage<{ computer: Computer; products: any }> = ({
+const Details: NextPage<{ computer: Computer }> = ({
   computer,
-  products,
 }) => {
   const router = useRouter();
   const { cartItems, setCartItems } = useContext(GlobalContext);
-  console.log({ computers });
+  console.log({ computer });
 
   const [selectMedium, setSelectMedium] = useState("cash");
   const [monitor, setMonitor] = useState<any>();
@@ -42,7 +41,7 @@ const Details: NextPage<{ computer: Computer; products: any }> = ({
   }
 
   let totalPrice =
-    Number(computer.price) + Number(shippingPrice) + Number(aditionalItems);
+    Number(computer.specs.reduce((a, c) => a + c.price, 0)) + Number(shippingPrice) + Number(aditionalItems);
 
   const dispatch = useDispatch();
 
@@ -75,7 +74,6 @@ const Details: NextPage<{ computer: Computer; products: any }> = ({
 
   const [openFooter, setOpenFooter] = useState(false);
 
-  console.log({ products });
   return (
     <Layout title={computer.name}>
       {loading ? (
@@ -83,7 +81,7 @@ const Details: NextPage<{ computer: Computer; products: any }> = ({
       ) : (
         <div className={styles.containerMain}>
           <div className={styles.containerHeader}>
-            <p>{DivisaFormater(computer.price)}</p>
+            <p>{DivisaFormater(computer.specs.reduce((a, c) => a + c.price, 0))}</p>
             {/* <button className={topButton ? `btn-principal scroll` : ""} onClick={() => addToCartHandler()}>
               <span className="shadow"></span>
               <span className="edge"></span>
@@ -96,14 +94,21 @@ const Details: NextPage<{ computer: Computer; products: any }> = ({
             </button>
           </div>
           <div className={styles.container_items}>
-            <Image
-              src={computer.images[0]}
+             <Image
+              src={computer?.images[0]}
               alt={computer.name}
-              width={400}
+              width={450}
               height={450}
-            />
+              objectFit={'cover'}
+            /> 
             <div className={styles.container_slide}>
-              <h2>{computer.name}</h2>
+              <span className={styles.offer}>Oferta</span>
+              <h2 className={styles.name}>{computer.name}</h2>
+              <button  className={styles.btn_buy} onClick={addToCartHandler}>Comprar esta PC</button>
+              <p>
+              {/* <i className='bx bx-package'></i> Envios a todo el pais                 */}
+              </p>
+              <p className={styles.separator}><i className="bx bx-cog"></i> Configuracion del PC</p>
               <Swiper
                 effect="fade"
                 modules={[Navigation, Pagination]}
@@ -112,22 +117,22 @@ const Details: NextPage<{ computer: Computer; products: any }> = ({
                 navigation
                 pagination={{ clickable: true }}
               >
-                {computer.specs.map((spec) => (
+                {computer?.specs?.map((spec) => (
                   <SwiperSlide
                     zoom={true}
                     onSelect={() => setMonitor(spec)}
                     key={spec.name}
                   >
                     <div className={styles.box}>
-                      {/* <img src={spec?.images[0]} alt="" /> */}
                       <h4>{DivisaFormater(spec?.price)}</h4>
                       <p>{spec?.name}</p>
+                      <img src={spec?.images[0]} alt="" />
                     </div>
                   </SwiperSlide>
                 ))}
               </Swiper>
-              <span className={styles.dividir}>Configuracion</span>
-
+              <span className={styles.dividir}>Configuración</span>
+              <p className={styles.info}>Dale estilo a tu PC Gamer con nuestra variedad de opciones extra, añade todo lo que necesites.</p>
               <Swiper
                 effect="fade"
                 modules={[Navigation, Pagination]}
@@ -158,7 +163,8 @@ const Details: NextPage<{ computer: Computer; products: any }> = ({
                   </div>
                 </SwiperSlide>
 
-                {products.items
+              
+                {/* {products.items
                   .filter(
                     (product: Product) =>
                       product.category == "14f9af3-c649-42c0-b679-521887d99462"
@@ -183,8 +189,7 @@ const Details: NextPage<{ computer: Computer; products: any }> = ({
                         <p>{product.name}</p>
                       </div>
                     </SwiperSlide>
-                  ))}
-
+                  ))} */}
                 {/* {products.filter((moni) => moni.category == "626dd952cfc8d7c93ecd9eb3")
                   .map((moni) => (
                       <SwiperSlide
@@ -243,17 +248,17 @@ const Details: NextPage<{ computer: Computer; products: any }> = ({
               <div className={styles.boxHeader}>
                 <i className="bx bxs-joystick"></i> Juegos Recomendados
               </div>
-              <div className={styles.boxContent}>
+              {/* <div className={styles.boxContent}>
                 {computer.games.map(({ name, image }) => (
                   <img key={name} src={image} alt="" title={name} />
                 ))}
-              </div>
+              </div> */}
             </div>
             <div className={styles.gamesBox}>
               <div className={styles.boxHeader}>
                 <i className="bx bxs-palette"></i> Ideal Para
               </div>
-              <div className={styles.boxContent}>
+              {/* <div className={styles.boxContent}>
                 {computer.programs.map((program) => (
                   <img
                     key={program.name}
@@ -262,7 +267,7 @@ const Details: NextPage<{ computer: Computer; products: any }> = ({
                     title={program.name}
                   />
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -273,7 +278,7 @@ const Details: NextPage<{ computer: Computer; products: any }> = ({
               <i className="bx bx-chevron-up"></i>
             </button>
             <p>
-              {DivisaFormater(Number(computer.price) + Number(aditionalItems))}
+              {DivisaFormater(Number(computer.specs.reduce((a, c) => a + c.price, 0)) + Number(aditionalItems))}
             </p>
             <span className={styles.span}>----</span>
           </div>
@@ -340,7 +345,7 @@ const Details: NextPage<{ computer: Computer; products: any }> = ({
                 <li>
                   <p>Total</p>{" "}
                   {DivisaFormater(
-                    Number(computer.price) +
+                    Number(computer.specs.reduce((a, c) => a + c.price, 0)) +
                       Number(shippingPrice) +
                       Number(tax) +
                       Number(aditionalItems)
@@ -361,18 +366,15 @@ export async function getServerSideProps(context: any) {
 
   const res = await fetch(
     `https://prooving-api-production-ac13.up.railway.app/api/v1/computer/${slug}`
-  );
-  const resProducts = await fetch(
-    `https://prooving-api-production-ac13.up.railway.app/api/v1/products?limit=100`
+    //  `http://localhost:5000/api/v1/computer/${slug}`
+    
   );
 
   const results = await res.json();
-  const resultsProducts = await resProducts.json();
 
   return {
     props: {
       computer: results,
-      products: resultsProducts,
     },
   };
 }

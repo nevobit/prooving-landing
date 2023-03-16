@@ -781,3 +781,44 @@
 
 }
 
+
+.offer{
+  background-color: var(--alert);
+  border-radius: .5rem;
+  padding: .5rem 1rem;
+  font-size: 1.4rem;
+}
+
+.container_slide .name{
+  font-size: 3rem;
+  text-align: left;
+  width: 100%;
+  margin-block: 1rem;
+  font-weight: 600;
+}
+
+
+.btn_buy{
+  width: 100%;
+  text-align: center;
+  
+  background-color: #4169e1;
+    display: block;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #f2f6fa;
+    height: 5rem;
+}
+
+.separator{
+  margin-top: 1.5rem;
+  margin-bottom: -1rem;
+}
+
+.info{
+  opacity: .7;
+  font-size: 1.4rem;
+  padding: 0 1rem;
+}
