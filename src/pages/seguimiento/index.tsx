@@ -20,7 +20,7 @@ const Tracking = () => {
     <Layout title="Seguimiento">
       <div className="container">
         <h2 className={styles.title}>
-          Da <strong>seguimiento</strong> de su pedido
+          Da <strong>seguimiento</strong> a tu pedido
         </h2>
         <div className={styles.field}>
           <i className="bx bx-search"></i>
