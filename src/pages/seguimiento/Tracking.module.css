@@ -1,0 +1,84 @@
+.title{
+    font-size: 2rem;
+    font-weight: 400;
+    opacity: .9;
+}
+
+.field{
+    width: 100%;
+    height: 5rem;
+    background-color: rgba(255,255, 255,0.1);
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+.field i{
+    font-size: 2.5rem;
+}
+
+.field input{
+    width: 100%;
+    height: 100%;
+    padding: .5rem;
+    background-color: transparent;
+    color: #f2f6fa;
+}
+
+.client{
+    margin-top: 2rem;
+}
+
+.client > div{
+    margin-bottom: 1rem;
+}
+
+.client > div span{
+    opacity: 0.7;
+    font-size: 1.4rem;
+}
+
+.details{
+    margin-bottom: 1.5rem;
+   
+}
+
+.details i{
+    font-size: 2rem;
+}
+
+.details summary{
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.details .list{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-left: 3rem;
+    opacity: .7;
+}
+
+.picture{
+    display: grid;
+    margin-top: 15rem;
+    place-items: center;
+    margin-bottom: 34rem;
+}
+
+.btn{
+  text-align: center;
+  background-color: #4169e1;
+    display: block;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #f2f6fa;
+    height: 5rem;
+    margin-top: .5rem;
+}
