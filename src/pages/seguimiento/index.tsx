@@ -8,7 +8,7 @@ const Tracking = () => {
   const [is, setIs] = useState(false);
   
   const verify = () => {
-    if(search.toLocaleLowerCase() == 'PROO567847673'){
+    if(search.toLocaleLowerCase() == 'PROO567847673'.toLocaleLowerCase()){
       setIs(true);
     }else{
       alert("Numero de seguimiento no encontrado")
