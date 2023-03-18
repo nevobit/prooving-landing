@@ -108,7 +108,7 @@ const Tracking = () => {
           </div>
           <div>
             <span>Estado del pago</span>
-            <p>Pendiente</p>
+            <p>Autorizado</p>
           </div>
         </div>
         </>     
