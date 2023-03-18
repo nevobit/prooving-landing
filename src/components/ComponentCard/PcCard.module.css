@@ -1,0 +1,81 @@
+.card{
+    overflow: hidden;
+    border:  2px solid transparent;
+    background: transparent
+    radial-gradient(closest-side at 50% 50%, #2e2e2e 0, #191919 100%) 0 0
+    no-repeat padding-box;
+    transition: border .2s ease-in-out;
+    position: relative;
+    z-index: 0;
+    border-radius: 1rem;
+}
+
+.card::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 14rem;
+    background-color: #4269e1;
+    z-index: -1;
+    border-bottom: 3px solid #f2f6fa;
+}
+
+.card h2{
+    font-size: 2rem;
+    margin-top: 0;
+    padding: 1rem;
+    padding-bottom: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.card picture{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -2rem;
+
+}
+
+.card picture img{
+    width: 150px;
+    height: 150px;
+    margin-top: -2rem;
+    filter: drop-shadow(0px 15px 6px rgba(0,0,0, .3));
+    z-index: 3;
+    object-fit: contain;
+}
+
+.price{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    font-size: 1.4rem;
+    border-bottom: 1px solid rgba(255,255,255, .2);
+}
+
+.specs{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid hsla(0, 0%, 100%, .05);
+}
+.specs p{
+    font-size: 1.3rem;
+    padding: .8rem 1rem;
+}
+
+.specs p:last-child{
+    font-weight: 600;
+    text-overflow: ellipsis;
+    width: 13rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: right;
+}
